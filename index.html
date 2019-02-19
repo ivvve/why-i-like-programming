@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Chris' presentation</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.6/css/swiper.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.6/css/swiper.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.6/js/swiper.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.6/js/swiper.min.js"></script>
+
+    <!-- Demo styles -->
+  <style>
+        html, body {
+          position: relative;
+          height: 100%;
+        }
+        body {
+          background: #eee;
+          font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+          font-size: 20px;
+          color:#000;
+          margin: 0;
+          padding: 0;
+        }
+        .swiper-container {
+          width: 100%;
+          height: 100%;
+        }
+        .swiper-slide {
+          text-align: center;
+          font-size: 30px;
+          background: #fff;
+          /* Center slide text vertically */
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: -webkit-flex;
+          display: flex;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          -webkit-justify-content: center;
+          justify-content: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          -webkit-align-items: center;
+          align-items: center;
+        }
+      </style>
+    </head>
+</head>
+<body>
+      <!-- Swiper -->
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            Why I like programming?
+          </div>
+          <div class="swiper-slide">
+            Why do you think I do programming?
+          </div>
+          <div class="swiper-slide">
+              <img src="./images/money-fame-cup.jpg" alt="">
+            </div>
+          <div class="swiper-slide">
+              <img src="./images/coding-toy.jpg" alt="">
+            </div>
+          <div class="swiper-slide">
+              <img src="./images/services.png" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/it.jpg" alt="">
+            </div>
+          <div class="swiper-slide">
+              <img src="./images/sound-cloud.jpg" alt="">
+          </div>
+          <div class="swiper-slide">
+            <a href="my_luck.html" style="color: black; text-decoration: none;">
+              My simple fortune app
+            </a>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Swiper JS -->
+      <script src="../dist/js/swiper.min.js"></script>
+    
+      <!-- Initialize Swiper -->
+      <script>
+        var swiper = new Swiper('.swiper-container', {
+          keyboard: {
+            enabled: true,
+            onlyInViewport: false,
+          },
+        })
+      </script>
+
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>초성으로 보는 2019년 운세</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+    <div class="container" style="text-align: center;">
+        <div class="header">
+        </div>
+
+        <div class="jumbotron">
+            <img src="my_luck.jpg" alt="운세" style="height: 600px;">
+        </div>
+
+    
+        <div class="form-inline">
+            <div class="form-group" style="">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name...">
+                <button id="search" class="btn btn-info" style="margin-left: 10px;">search</button>
+            </div>
+        </div>
+
+        <h3 id="first">&nbsp;</h3>
+        <h3 id="second">이름을 적고 버튼을 눌러주세요.</h3>
+        <h3 id="third"></h3>
+    </div> <!-- /container -->
+
+    <footer class="footer" style="float: right; padding-right: 30px;">
+        <p>2019.02.15 Made by Chris</p>
+    </footer>
+
+    <script>
+        var result = {
+            first: {
+                ㄱ: "크리스마스날",
+                ㄴ: "집 앞에서",
+                ㄷ: "올해 안에",
+                ㄹ: "화장실에서",
+                ㅁ: "바다에서",
+                ㅂ: "편의점에서",
+                ㅅ: "학교에서",
+                ㅇ: "길거리에서",
+                ㅈ: "지하철에서",
+                ㅊ: "내 생일날",
+                ㅋ: "한 달 안에",
+                ㅌ: "식당에서",
+                ㅍ: "카페에서",
+                ㅎ: "알바하다가",
+            },
+            second: {
+                ㄱ: "모르는 사람과",
+                ㄴ: "부모님과",
+                ㄷ: "길가는 사람과",
+                ㄹ: "애인과",
+                ㅁ: "혼자서",
+                ㅂ: "전 남친/여친과",
+                ㅅ: "절친과",
+                ㅇ: "최애 연예인과",
+                ㅈ: "스윙스와",
+                ㅊ: "동명이인과",
+                ㅋ: "아는 남자와",
+                ㅌ: "썸녀와",
+                ㅍ: "옆집 사람과",
+                ㅎ: "과동기들과",
+            }, 
+            third: {
+                ㄱ: "셀카찍는다.",
+                ㄴ: "치킨먹는다.",
+                ㄷ: "데뷔한다.",
+                ㄹ: "혼난다.",
+                ㅁ: "댄스 배틀",
+                ㅂ: "술 마신다.",
+                ㅅ: "로또 당첨된다.",
+                ㅇ: "넘어진다.",
+                ㅈ: "잠 잔다.",
+                ㅊ: "돈 줍는다.",
+                ㅋ: "데이트한다.",
+                ㅌ: "번호 따인다.",
+                ㅍ: "애교 부린다.",
+                ㅎ: "뽀뽀한다.",
+            },
+
+            getSingleResult: function(char, target) {
+                switch (target) {
+                    case "first":
+                        return this[target][char];
+                    case "second":
+                        return this[target][char];
+                    case "third":
+                        return this[target][char];
+                    default:
+                        return "";
+                }
+            },
+
+            getTotalResult: function(name) {
+                $("#first").text(this.getSingleResult(nameConverter.convert(name.charAt(0)), "first"));
+                $("#second").text(this.getSingleResult(nameConverter.convert(name.charAt(1)), "second"));
+                $("#third").text(this.getSingleResult(nameConverter.convert(name.charAt(2)), "third"));
+            }
+
+        };
+
+        var nameConverter = {
+            ㄱ: "가".charCodeAt(0),
+            ㄴ: "나".charCodeAt(0),
+            ㄷ: "다".charCodeAt(0),
+            ㄹ: "라".charCodeAt(0),
+            ㅁ: "마".charCodeAt(0),
+            ㅂ: "바".charCodeAt(0),
+            ㅅ: "사".charCodeAt(0),
+            ㅇ: "아".charCodeAt(0),
+            ㅈ: "자".charCodeAt(0),
+            ㅊ: "차".charCodeAt(0),
+            ㅋ: "카".charCodeAt(0),
+            ㅌ: "타".charCodeAt(0),
+            ㅍ: "파".charCodeAt(0),
+            ㅎ: "하".charCodeAt(0),
+
+            convert: function(char) {
+                char = char.charCodeAt(0);
+
+                if (char < this["ㄴ"])
+                    return "ㄱ";
+                if (char < this["ㄷ"])
+                    return "ㄴ";
+                if (char < this["ㄹ"])
+                    return "ㄷ";
+                if (char < this["ㅁ"])
+                    return "ㄹ";
+                if (char < this["ㅂ"])
+                    return "ㅁ";
+                if (char < this["ㅅ"])
+                    return "ㅂ";
+                if (char < this["ㅇ"])
+                    return "ㅅ";
+                if (char < this["ㅈ"])
+                    return "ㅇ";
+                if (char < this["ㅊ"])
+                    return "ㅈ";
+                if (char < this["ㅋ"])
+                    return "ㅊ";
+                if (char < this["ㅌ"])
+                    return "ㅋ";
+                if (char < this["ㅍ"])
+                    return "ㅌ";
+                if (char < this["ㅎ"])
+                    return "ㅍ";
+                return "ㅎ";
+            }
+        };
+        
+
+        $(function() {
+            $("#name").keydown(function(key) {
+
+                if (key.keyCode === 13) {
+                    var name = $(this).val();
+                    result.getTotalResult(name);
+                }
+            });
+
+            $("#search").click(function() {
+                var name = $("#name").val();
+                result.getTotalResult(name);
+            })
+        });
+    </script>
+</body>
+</html>
